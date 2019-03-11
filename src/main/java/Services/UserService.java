@@ -124,6 +124,8 @@ public class UserService implements UserDAO {
 
         Util.connectToDB();
 
+        System.out.println("new changes");
+        
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("UPDATE users SET id=\'");
         stringBuilder.append(user.getId());
