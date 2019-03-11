@@ -12,6 +12,26 @@ import java.util.List;
 public class UserService implements UserDAO {
     public void add(User user) {
 
+        Util.connectToDB();
+        String insertData = "INSERT INTO users VALUES (?,?,?,?)";
+
+        PreparedStatement preparedStatement = null;
+
+        try {
+            preparedStatement = Util.connection.prepareStatement(insertData);
+            preparedStatement.setInt(1, user.getId());
+            preparedStatement.setString(2, user.getLogin());
+            preparedStatement.setInt(3, user.getPassword());
+            preparedStatement.setInt(4, user.getRole());
+
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Util.disconnectFromDB();
+
     }
 
     public List<User> getAll() throws SQLException {
