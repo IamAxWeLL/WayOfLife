@@ -13,7 +13,7 @@ public class AimService implements AimDAO {
     public void add(Aim aim) {
 
         Util.connectToDB();
-        String insertData = "INSERT INTO aims VALUES (?,?,?,?)";
+        String insertData = "INSERT INTO aims VALUES (?,?,?,?,?)";
 
         PreparedStatement preparedStatement = null;
 
@@ -23,7 +23,7 @@ public class AimService implements AimDAO {
             preparedStatement.setString(2, aim.getAim());
             preparedStatement.setDate(3, aim.getDate());
             preparedStatement.setBoolean(4, aim.isDone());
-
+            preparedStatement.setInt(5, aim.getUserID());
 
             preparedStatement.executeUpdate();
 
@@ -58,7 +58,8 @@ public class AimService implements AimDAO {
                     resultSet.getInt(1),
                     resultSet.getString(2),
                     resultSet.getDate(3),
-                    resultSet.getBoolean(4));
+                    resultSet.getBoolean(4),
+                    resultSet.getInt(5));
 
             aimsList.add(aim);
         }
@@ -82,7 +83,8 @@ public class AimService implements AimDAO {
                     resultSet.getInt(1),
                     resultSet.getString(2),
                     resultSet.getDate(3),
-                    resultSet.getBoolean(4)
+                    resultSet.getBoolean(4),
+                    resultSet.getInt(5)
             );
         } catch (SQLException e) {
             e.printStackTrace();

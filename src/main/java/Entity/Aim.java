@@ -8,12 +8,14 @@ public class Aim {
     private String aim;
     private Date date;
     private boolean isDone;
+    private int userID;
 
-    public Aim(int id, String aim, Date date, boolean isDone) {
+    public Aim(int id, String aim, Date date, boolean isDone,int userID) {
         this.id = id;
         this.aim = aim;
         this.date = date;
         this.isDone = isDone;
+        this.userID = userID;
     }
 
     public int getId() {
@@ -46,5 +48,13 @@ public class Aim {
 
     public void setDone(boolean done) {
         isDone = done;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 }

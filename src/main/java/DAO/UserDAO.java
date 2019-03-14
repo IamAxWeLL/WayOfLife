@@ -16,6 +16,7 @@ public interface UserDAO {
     User getByID(int id);
     void update(User user);
     void remove(User user);
+    boolean containsUser(User user) throws SQLException;
 
     //Aim getByUser(User user);
 }

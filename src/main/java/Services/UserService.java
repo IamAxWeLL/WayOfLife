@@ -65,7 +65,7 @@ public class UserService implements UserDAO {
     }
 
     public List<Aim> getAllAims(User user) throws SQLException {
-        String query = "select * from aims";
+        String query = "select * from aims where usedID=" + user.getId();
 
         Util.connectToDB();
 
@@ -87,7 +87,9 @@ public class UserService implements UserDAO {
                     resultSet.getInt(1),
                     resultSet.getString(2),
                     resultSet.getDate(3),
-                    resultSet.getBoolean(4));
+                    resultSet.getBoolean(4),
+                    resultSet.getInt(5)
+                    );
 
             aimsList.add(aim);
         }
@@ -125,7 +127,7 @@ public class UserService implements UserDAO {
         Util.connectToDB();
 
         System.out.println("new changes");
-        
+
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("UPDATE users SET id=\'");
         stringBuilder.append(user.getId());
@@ -162,5 +164,26 @@ public class UserService implements UserDAO {
         }
 
         Util.disconnectFromDB();
+    }
+
+    public boolean containsUser(User user) throws SQLException {
+
+        String query = "select * from users where login=" + user.getLogin() + ",password=" + user.getPassword();
+
+        Util.connectToDB();
+
+        Connection connection = Util.connection;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+          Util.disconnectFromDB();
+
+        return resultSet.next();
     }
 }

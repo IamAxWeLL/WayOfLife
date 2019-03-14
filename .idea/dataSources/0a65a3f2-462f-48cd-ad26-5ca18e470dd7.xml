@@ -1387,88 +1387,93 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="336" parent="286" name="Aims_id_uindex">
+    <column id="336" parent="286" name="userID">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="337" parent="286" name="Aims_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="337" parent="286" name="PRIMARY">
+    <key id="338" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="338" parent="286" name="Aims_id_uindex">
+    <key id="339" parent="286" name="Aims_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>Aims_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="339" parent="287" name="id">
+    <column id="340" parent="287" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="340" parent="287" name="name">
+    <column id="341" parent="287" name="name">
       <Position>2</Position>
       <DataType>varchar(55)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="341" parent="287" name="role_id_uindex">
+    <index id="342" parent="287" name="role_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="342" parent="287" name="role_name_uindex">
+    <index id="343" parent="287" name="role_name_uindex">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="343" parent="287" name="PRIMARY">
+    <key id="344" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="344" parent="287" name="role_id_uindex">
+    <key id="345" parent="287" name="role_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>role_id_uindex</UnderlyingIndexName>
     </key>
-    <key id="345" parent="287" name="role_name_uindex">
+    <key id="346" parent="287" name="role_name_uindex">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>role_name_uindex</UnderlyingIndexName>
     </key>
-    <column id="346" parent="288" name="id">
+    <column id="347" parent="288" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="347" parent="288" name="login">
+    <column id="348" parent="288" name="login">
       <Position>2</Position>
       <DataType>varchar(55)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="348" parent="288" name="password">
+    <column id="349" parent="288" name="password">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="349" parent="288" name="role">
+    <column id="350" parent="288" name="role">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="350" parent="288" name="Users_id_uindex">
+    <index id="351" parent="288" name="Users_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="351" parent="288" name="PRIMARY">
+    <key id="352" parent="288" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="352" parent="288" name="Users_id_uindex">
+    <key id="353" parent="288" name="Users_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>Users_id_uindex</UnderlyingIndexName>
     </key>
