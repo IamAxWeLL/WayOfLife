@@ -34,7 +34,7 @@ public class AimService implements AimDAO {
 
     }
 
-    public List<Aim> getAll() throws SQLException {
+    public ArrayList<Aim> getAll() throws SQLException {
 
         String query = "select * from aims";
 
