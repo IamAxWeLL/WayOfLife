@@ -50,7 +50,7 @@ public class AimService implements AimDAO {
             e.printStackTrace();
         }
 
-        List<Aim> aimsList = new ArrayList<Aim>();
+        ArrayList<Aim> aimsList = new ArrayList<Aim>();
 
         while (resultSet.next()) {
 

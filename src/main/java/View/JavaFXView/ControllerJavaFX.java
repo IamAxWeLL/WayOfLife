@@ -11,6 +11,7 @@ public class ControllerJavaFX {
     public static Scene mainScene;
     private LoginWindow loginWindow;
     private  UserWindow userWindow;
+    private  AdminWindow adminWindow;
     private UserService userService;
     private AimService aimService;
     private RoleService roleService;
@@ -20,12 +21,14 @@ public class ControllerJavaFX {
         this.aimService = aimService;
         this.roleService = roleService;
         this.loginWindow = new LoginWindow(userService);
+
         try {
+            this.adminWindow = new AdminWindow(userService);
             this.userWindow = new UserWindow(aimService, userService);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        this.mainScene = UserWindow.userScene;
+        this.mainScene = AdminWindow.adminScene;
 
 
     }
