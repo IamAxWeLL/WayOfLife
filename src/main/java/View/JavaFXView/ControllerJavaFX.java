@@ -26,7 +26,7 @@ public class ControllerJavaFX {
         this.loginWindow = new LoginWindow(userService);
         this.adminWindow = new AdminWindow(userService);
         this.userWindow = new UserWindow(aimService, userService);
-        
+
         this.mainScene = LoginWindow.loginScene;
     }
 
